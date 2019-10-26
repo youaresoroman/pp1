@@ -1,10 +1,10 @@
-dbuser = 'marek'
-dbpwd = 'wx15'
+user = 'marek'
+pwd = 'wx15'
 
-inputuser = str(input("Podaj login: "))
-inputpwd = str(input("Podaj hasło: "))
+inuser = str(input("Podaj login: "))
+inpwd = str(input("Podaj hasło: "))
 
-if dbuser == inputuser and inputpwd == dbpwd:
+if user == inuser and  pwd == inpwd:
     print("Podane dane są prawidłowe")
 else:
     print("Podane dane są nieprawidłowe")

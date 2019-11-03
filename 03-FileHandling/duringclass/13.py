@@ -1,7 +1,5 @@
-import re
-komunikat = 'wtorek - 23C, środa - 17C, czwartek 25C'
-cyfry = re.findall('\d{2}',komunikat)
-sum = 0
-for i in cyfry:
-    sum += int(i)
-print(f"{sum/len(cyfry)}")
+tab = [32, 16, 5, 8, 24, 7]
+
+with open('tab13.txt','w') as file:
+    for x in tab:
+        file.write(str(x)+'\n')

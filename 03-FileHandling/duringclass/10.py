@@ -1,5 +1,6 @@
-table = [32, 16, 5, 8, 24, 7]
-
-file = open('output.txt','w')
-for number in table:
-    file.write(f"{number}\n")
+suma = 0
+with open('../numbers.txt','r') as file:
+    for x in file:
+        suma+=int(x)
+        
+print(suma)

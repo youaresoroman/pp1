@@ -1,14 +1,9 @@
-table = []
-sum = 0
-file_r = open('../numbersinrows.txt', 'r')
-for line in file_r:
-    line = line.strip('\n')
-    line = line.split(",")
-    for number in line:
-        table.append(number)
+import re
+liczby=[]
 
-for num in table:
-    sum += int(num)
-
-print(f"count:{len(table)}, sum:{sum}")
-file_r.close()
+with open('numbers.txt','r') as file: 
+    for x in file: 
+        liczby.append(int(x))
+liczby.sort()
+for i in liczby:
+    print(f'{i}',end=' ')

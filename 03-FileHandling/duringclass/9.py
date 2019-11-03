@@ -1,5 +1,5 @@
-line = 'x'
-with open('shoppinglist.txt','w') as file:
-    while line != '':
-        line = input("Podaj produkt: ")
-        file.write(f"{line}\n")
+i=1
+with open('../NoEducation.txt','r') as file:
+    for line in file:
+        print(f'{i}. {line}', end='')
+        i+=1

@@ -10,4 +10,4 @@ def jestImie(imie, imiona):
         
     print("\nRezultat: imię zawarte nie jest w wykazie imion")
     
-jestImie('Wojte', ['Janek', 'Ania', 'Wojtek', 'Zosia'])
+jestImie('Wojtek', ['Janek', 'Ania', 'Wojtek', 'Zosia'])

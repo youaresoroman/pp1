@@ -6,3 +6,4 @@ class University():
 
 my_university = University('UEK Kraków')
 print(my_university)
+

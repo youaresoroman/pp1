@@ -1,36 +1,42 @@
 import random
 
 class Macierz():
+    macierz = []
+    height = 0
+    width = 0
 
-    @staticmethod
-    def create(x, y, filled=True):
+    def __init__(self, x, y, filled=True):
         if filled == True:
-            return [[random.randint(0,9) for w in range(x)] for h in range(y)]
+            self.macierz = [[random.randint(0,9) for w in range(x)] for h in range(y)]
         elif filled == False:
-            return [[0 for w in range(x)] for h in range(y)]
+            self.macierz = [[0 for w in range(x)] for h in range(y)]
 
-    @staticmethod
-    def dimentions(matrix):
-        return {"height": len(matrix), "width": len(matrix[0])}
-    
-    @staticmethod
-    def sum(matrix1, matrix2):
-        dimensionsM1 = Macierz.dimentions(matrix1)
-        dimensionsM2 = Macierz.dimentions(matrix2)
-        height = dimensionsM1['height']
-        width = dimensionsM1['width']
+        self.height = len(self.macierz)
+        self.width = len(self.macierz[0])
 
-        if (dimensionsM1 == dimensionsM2):
-            newmatrix = Macierz.create(width, height, False)
+    def __str__(self):
+        out = ''
+        for row in self.macierz:
+            for element in row:
+                out += f"{element} " 
+            out += "\n"
+        return out
 
-            for row in range(0, height-1):
-                for element in range(0, width-1):
-                    newmatrix[row][element] = matrix1[row][element] + matrix2[row][element]
-            return newmatrix
+    def __add__(self, other):
+
+        if (self.height == other.height and self.width == other.width):
+            newmacierz = Macierz(self.width, self.height, False)
+
+            for row in range(0, self.height):
+                for element in range(0, self.width):
+                    newmacierz.macierz[row][element] = self.macierz[row][element] + other.macierz[row][element]
+            return newmacierz
         else:
-            return Macierz.create(width, height)
+            return Macierz(self.width, self.height, False)
 
-matrix1 = Macierz.create(5, 6)
-matrix2 = Macierz.create(5, 6)
-print(f"{matrix1}\n{matrix2}")
-print(f"{Macierz.sum(matrix1, matrix2)}")
+matrix1 = Macierz(5, 5)
+matrix2 = Macierz(5, 5)
+
+print(matrix1)
+print(matrix2)
+print(matrix1 + matrix2)

@@ -23,16 +23,15 @@ class Macierz():
         return out
 
     def __add__(self, other):
+        newmacierz = Macierz(self.width, self.height, False)
 
         if (self.height == other.height and self.width == other.width):
-            newmacierz = Macierz(self.width, self.height, False)
-
             for row in range(0, self.height):
                 for element in range(0, self.width):
                     newmacierz.macierz[row][element] = self.macierz[row][element] + other.macierz[row][element]
             return newmacierz
         else:
-            return Macierz(self.width, self.height, False)
+            return newmacierz
 
 matrix1 = Macierz(5, 5)
 matrix2 = Macierz(5, 5)
